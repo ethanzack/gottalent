@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import firebase from './firebase.js'
-import { Route, Switch, withRouter } from 'react-router-dom';
-import {Router} from 'react-router'
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
+// import {Router} from 'react-router'
 import HomePage from './components/HomePage.js'
 import VideoUpload from './components/VideoUpload.js'
 import VideoPage from './components/VideoPage.js'
 import MyVideoList from './components/MyVideoList.js'
 
-import { createBrowserHistory } from 'history'
+// import { createBrowserHistory } from 'history'
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 class App extends Component {
   constructor(props){
@@ -63,7 +63,7 @@ makeComponent = () => {
 
 render() {
   return (
-    <Router history={history} onChange={() => {return}}>
+    <Router basename="/gottalent/">
       <Switch>
         <Route exact path = "/home" render={(props) => <HomePage {...props} />}/>
         <Route exact path = "/upload-video" component = {VideoUpload} />

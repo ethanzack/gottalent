@@ -54,7 +54,7 @@ render() {
                   <span className="mr-2">My Account</span>
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
-                  <MDBDropdownItem href="/myvideos">My Videos</MDBDropdownItem>
+                  <MDBDropdownItem href = "/myvideos">My Videos</MDBDropdownItem>
                   <MDBDropdownItem href="#!">Account Settings</MDBDropdownItem>
                   <MDBDropdownItem href="#!">Preferences</MDBDropdownItem>
                 </MDBDropdownMenu>
