@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/gottalent/static/css/main.5669ca8f.chunk.css",
+    "main.js": "/gottalent/static/js/main.b68743ba.chunk.js",
+    "main.js.map": "/gottalent/static/js/main.b68743ba.chunk.js.map",
+    "runtime-main.js": "/gottalent/static/js/runtime-main.e84d8a40.js",
+    "runtime-main.js.map": "/gottalent/static/js/runtime-main.e84d8a40.js.map",
+    "static/css/2.b8df3a92.chunk.css": "/gottalent/static/css/2.b8df3a92.chunk.css",
+    "static/js/2.543133b7.chunk.js": "/gottalent/static/js/2.543133b7.chunk.js",
+    "static/js/2.543133b7.chunk.js.map": "/gottalent/static/js/2.543133b7.chunk.js.map",
+    "index.html": "/gottalent/index.html",
+    "precache-manifest.81ff6a68be258c14b552a808e46ae8fe.js": "/gottalent/precache-manifest.81ff6a68be258c14b552a808e46ae8fe.js",
+    "service-worker.js": "/gottalent/service-worker.js",
+    "static/css/2.b8df3a92.chunk.css.map": "/gottalent/static/css/2.b8df3a92.chunk.css.map",
+    "static/css/main.5669ca8f.chunk.css.map": "/gottalent/static/css/main.5669ca8f.chunk.css.map",
+    "static/js/2.543133b7.chunk.js.LICENSE.txt": "/gottalent/static/js/2.543133b7.chunk.js.LICENSE.txt",
+    "static/media/mdb.css": "/gottalent/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/styles.css": "/gottalent/static/media/revicons.2feb69cc.eot",
+    "static/media/slick-theme.css": "/gottalent/static/media/slick.f97e3bbf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e84d8a40.js",
+    "static/css/2.b8df3a92.chunk.css",
+    "static/js/2.543133b7.chunk.js",
+    "static/css/main.5669ca8f.chunk.css",
+    "static/js/main.b68743ba.chunk.js"
+  ]
+}
