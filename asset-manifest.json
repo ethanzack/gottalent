@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/gottalent/static/css/main.5669ca8f.chunk.css",
-    "main.js": "/gottalent/static/js/main.b049f310.chunk.js",
-    "main.js.map": "/gottalent/static/js/main.b049f310.chunk.js.map",
+    "main.js": "/gottalent/static/js/main.0d27b37b.chunk.js",
+    "main.js.map": "/gottalent/static/js/main.0d27b37b.chunk.js.map",
     "runtime-main.js": "/gottalent/static/js/runtime-main.e84d8a40.js",
     "runtime-main.js.map": "/gottalent/static/js/runtime-main.e84d8a40.js.map",
     "static/css/2.01f22dbc.chunk.css": "/gottalent/static/css/2.01f22dbc.chunk.css",
     "static/js/2.1cd7ee30.chunk.js": "/gottalent/static/js/2.1cd7ee30.chunk.js",
     "static/js/2.1cd7ee30.chunk.js.map": "/gottalent/static/js/2.1cd7ee30.chunk.js.map",
     "index.html": "/gottalent/index.html",
-    "precache-manifest.43e54f81def89a76a7d1ce236adaa1cd.js": "/gottalent/precache-manifest.43e54f81def89a76a7d1ce236adaa1cd.js",
+    "precache-manifest.493b35d0f6b614cf2514872a44a48bf7.js": "/gottalent/precache-manifest.493b35d0f6b614cf2514872a44a48bf7.js",
     "service-worker.js": "/gottalent/service-worker.js",
     "static/css/2.01f22dbc.chunk.css.map": "/gottalent/static/css/2.01f22dbc.chunk.css.map",
     "static/css/main.5669ca8f.chunk.css.map": "/gottalent/static/css/main.5669ca8f.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.01f22dbc.chunk.css",
     "static/js/2.1cd7ee30.chunk.js",
     "static/css/main.5669ca8f.chunk.css",
-    "static/js/main.b049f310.chunk.js"
+    "static/js/main.0d27b37b.chunk.js"
   ]
 }
