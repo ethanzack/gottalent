@@ -43,19 +43,25 @@ class VideoPage extends Component {
   }
 
   hr = (ref, key) => {
+    let mounted = true
     if(key == "elem"){
       this.elem = ref
+      console.log("here2 here2 here2")
+
     }
     else {
       this.second = ref
+      console.log("here3 here3 here3")
+
     }
+
   }
 
 
   componentDidMount() {
     // console.log(this.blocks);
       if(this.elem && this.second) {
-        this.setState({h: .975 * this.elem.getBoundingClientRect().height - this.second.getBoundingClientRect().height})
+        this.setState({h: .975 * this.elem.getBoundingClientRect().height - this.second.getBoundingClientRect().height}, console.log(this.state.h))
       }
   }
 
@@ -65,10 +71,11 @@ class VideoPage extends Component {
     return (
       <div>
         <Navigation />
+
         <Container fluid = {true} style = {{display: "flex", flexDirection: "row", justifyContent: "center"}}>
           <Col xs="6">
             <h5 style = {{display: "flex", justifyContent: "center", alignItems: "center"}}> Watch the video </h5>
-            <VideoItem heightRet = {this.hr} title = {this.props.title} name = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" />
+            <VideoItem heightRet = {this.hr} title = {this.props.title} name = "-M46byl80qX3713B_dEH" />
           </Col>
           <Col xs="6">
             <div  style = {{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center"}}>
@@ -76,7 +83,7 @@ class VideoPage extends Component {
               <h5>Send a Suggestion</h5>
             </div>
             <FormGroup style = {{width: "100%"}}>
-              {this.state.h && <Input style = {{height: `${this.state.h}px`, resize: "none"}} type="textarea" name="text" id="suggestion" value = {this.state.comment} onChange = {this.handleChange} />}
+              <Input style = {{height: `365px`, resize: "none"}} type="textarea" name="text" id="suggestion" value = {this.state.comment} onChange = {this.handleChange} />
             </FormGroup>
             <Button size = "md" color = "primary" onClick = {() => {this.updateComments()}}>Submit Feedback</Button>
             </div>

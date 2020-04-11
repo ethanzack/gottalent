@@ -15,22 +15,29 @@ class MyVideoItem extends Component {
       myUrl: "",
       likes: 0,
       dislikes: 0,
-      suggestionCount: 0
+      suggestionCount: 0,
+      comments: [],
+      modal: false,
+
     }
   }
 
+  toggle = () => {
+    this.setState({modal: !this.state.modal})
+  }
+
   componentDidMount = () => {
-    this.setState({myUrl: this.props.name}) /* --- use for testing */
-    // storage.ref('videos').child(this.props.name).getDownloadURL().then((url) => {
-    //   this.setState({myUrl: url})
-    // })
-    //
-    // firebase.database().ref(`users/Ethan/${this.props.name}`).on("value", (snapshot => {
-    //  const up = snapshot.val()["up"]
-    //  const down = snapshot.val()["down"]
-    //  const comments = snapshot.val()["comments"]
-    //  this.setState({likes: up, dislikes: down, suggestionCount: Object.keys(comments).length})
-    // }))
+    // this.setState({myUrl: this.props.name}) /* --- use for testing */
+    storage.ref('videos').child(this.props.name).getDownloadURL().then((url) => {
+      this.setState({myUrl: url})
+    })
+
+    firebase.database().ref(`users/Ethan/${this.props.name}`).on("value", (snapshot => {
+     const up = snapshot.val()["up"]
+     const down = snapshot.val()["down"]
+     const comments = snapshot.val()["comments"]
+     this.setState({likes: up, dislikes: down, suggestionCount: Object.keys(comments).length, comments: Object.values(comments)})
+    }))
 
 
   }
@@ -38,7 +45,7 @@ class MyVideoItem extends Component {
 
   render() {
     return (
-      <div>
+        <div>
         <Container fluid = {true}>
           <Row >
             <Col style = {{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
@@ -51,11 +58,21 @@ class MyVideoItem extends Component {
               <p> Likes: {this.state.likes}</p>
               <p> Dislikes: {this.state.dislikes}</p>
               <p> Suggestion Count: {this.state.suggestionCount}</p>
-              <Button color = "primary"> View Advanced Insights </Button>
+              <Button color = "primary" onClick = {() => this.toggle()}> View Advanced Insights </Button>
             </Col>
           </Row>
         </Container>
-      </div>
+
+        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+          <ModalBody>
+            {this.state.comments.map((c, ind) => <Row>{c}</Row>)}
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={this.toggle}>Close</Button>
+          </ModalFooter>
+        </Modal>
+        </div>
     )
   }
 }

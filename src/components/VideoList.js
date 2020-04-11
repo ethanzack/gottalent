@@ -24,7 +24,7 @@ class VideoList extends Component {
     console.log("testing...")
     let testList = []
     for (let i = 0; i < 5; i++) {
-      testList.push("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4")
+      testList.push("-M46byl80qX3713B_dEH")
     }
     this.setState({topFive: testList})
     // firebase.database().ref("top5").on("value", (snapshot => {
@@ -33,10 +33,11 @@ class VideoList extends Component {
   }
 
   render() {
-    const mW = window.innerWidth / 10 - 50
+    const vids = this.state.topFive && this.state.topFive.map((t, ind) => (<ListVideoItem key = {ind} title = "test title" name = {t} />))
+
     return (
       <Container fluid = {true} style = {{display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
-        {this.state.topFive && this.state.topFive.map((t, ind) => (<ListVideoItem key = {ind} title = "test title" name = {t} />))}
+        {vids.length == 5 ? vids : null}
       </Container>
     )
   }

@@ -6,29 +6,21 @@ MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
 import { BrowserRouter as Router } from 'react-router-dom';
 
 class Navigation extends Component {
-state = {
-  isOpen: false
-};
+  constructor(props) {
+    super(props)
+    this.state = {
+      isOpen: false
+    };
+  }
+
 
 toggleCollapse = () => {
   this.setState({ isOpen: !this.state.isOpen });
 }
 
 render() {
-  // const { activePath } = useContext(AppContext)
-  // <MDBNavItem active = {activePath === "/upload-video"}><MDBNavLink to="/upload-video">Upload Video</MDBNavLink></MDBNavItem>
 
-  //// <MDBNavbarNav right>
-  //   <MDBNavItem>
-  //     <MDBFormInline waves>
-  //       <div className="md-form my-0">
-  //         <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
-  //       </div>
-  //     </MDBFormInline>
-  //   </MDBNavItem>
-  // </MDBNavbarNav>
-
-  const activePath = window.location.pathname
+  let activePath = window.location.pathname
 
   return (
       <MDBNavbar style = {{backgroundColor: "#4bbcdb" }} dark expand="md" className = "mb-3">
@@ -48,7 +40,8 @@ render() {
           </MDBNavbarNav>
 
           <MDBNavbarNav right>
-            <MDBNavItem>
+          {this.props.authenticated
+            ? <MDBNavItem>
               <MDBDropdown>
                 <MDBDropdownToggle nav caret>
                   <span className="mr-2">My Account</span>
@@ -60,6 +53,12 @@ render() {
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>
+            : <MDBNavItem active = {activePath === "/login"}><MDBNavLink to="/login">Register / Log in</MDBNavLink></MDBNavItem>
+
+
+          }
+
+
           </MDBNavbarNav>
 
         </MDBCollapse>
@@ -69,3 +68,16 @@ render() {
 }
 
 export default Navigation;
+
+// <MDBNavItem>
+//   <MDBDropdown>
+//     <MDBDropdownToggle nav caret>
+//       <span className="mr-2">My Account</span>
+//     </MDBDropdownToggle>
+//     <MDBDropdownMenu>
+//       <MDBDropdownItem href = "/myvideos">My Videos</MDBDropdownItem>
+//       <MDBDropdownItem href="#!">Account Settings</MDBDropdownItem>
+//       <MDBDropdownItem href="#!">Preferences</MDBDropdownItem>
+//     </MDBDropdownMenu>
+//   </MDBDropdown>
+// </MDBNavItem>

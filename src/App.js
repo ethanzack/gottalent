@@ -6,6 +6,10 @@ import HomePage from './components/HomePage.js'
 import VideoUpload from './components/VideoUpload.js'
 import VideoPage from './components/VideoPage.js'
 import MyVideoList from './components/MyVideoList.js'
+import Navigation from './components/Navigation.js'
+import Login from './components/Login.js'
+
+
 
 // import { createBrowserHistory } from 'history'
 
@@ -16,7 +20,8 @@ class App extends Component {
     super(props)
     this.state = {
       isOpen: false,
-      exists: null
+      exists: null,
+      authenticated: false
     };
 
     this.toggleCollapse = this.toggleCollapse.bind(this)
@@ -54,23 +59,39 @@ componentWillMount() {
 makeComponent = () => {
   if(this.state.exists != null){
     if(this.state.exists){
-       return <VideoPage title = "Test title" name = {this.state.name}/>
+       return <VideoPage title = "Test title" name = {this.state.name} authenticated = {this.state.authenticated}/>
     }
   } else {
-     return <HomePage vidClick = {this.handleVideoClick} />
+     return <HomePage vidClick = {this.handleVideoClick} authenticated = {this.state.authenticated}/>
   }
 }
 
 render() {
   return (
-    <Router basename="/gottalent/">
+    <Router>
       <Switch>
-        <Route exact path = "/home" render={(props) => <HomePage {...props} />}/>
-        <Route exact path = "/upload-video" component = {VideoUpload} />
-        <Route exact path = "/weekly" component = {VideoUpload} />
-        <Route exact path = "/monthly" component = {VideoUpload} />
-        <Route exact path = "/practice" component = {VideoUpload} />
-        <Route exact path = "/myvideos" component = {MyVideoList} />
+        <Route exact path = "/home">
+         <HomePage authenticated = {this.state.authenticated} />
+        </Route>
+        <Route exact path = "/upload-video">
+          <VideoUpload authenticated = {this.state.authenticated} />
+        </Route>
+        <Route exact path = "/weekly">
+          <VideoUpload authenticated = {this.state.authenticated} />
+        </Route>
+        <Route exact path = "/monthly">
+          <VideoUpload authenticated = {this.state.authenticated} />
+        </Route>
+        <Route exact path = "/practice">
+          <VideoUpload authenticated = {this.state.authenticated} />
+        </Route>
+        <Route exact path = "/myvideos">
+          <MyVideoList authenticated = {this.state.authenticated} />
+        </Route>
+
+        <Route exact path = "/login">
+          <Login authenticated = {this.state.authenticated} />
+        </Route>
 
         <Route exact path = "/" render={(props) => <HomePage {...props} />}/>
         <Route exact path = "/*">

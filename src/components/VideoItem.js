@@ -20,18 +20,20 @@ class VideoItem extends Component {
     this.activeHandler = this.activeHandler.bind(this)
     this.changeLikes = this.changeLikes.bind(this)
   }
-
-  componentWillMount = () => {
-    console.log("testing item...")
-    this.setState({myUrl: this.props.name})
-    // const url = storage.ref('videos').child(this.props.name).getDownloadURL().then((url) => {
-    //   this.setState({myUrl: url})
-    // })
-  }
+  // 
+  // componentWillMount = () => {
+  //   console.log("testing item...")
+  //   // this.setState({myUrl: this.props.name})
+  //
+  // }
 
   componentDidMount() {
    this.props.heightRet(this.elem, "elem");
    this.props.heightRet(this.second, "second");
+   const url = storage.ref('videos').child(this.props.name).getDownloadURL().then((url) => {
+     this.setState({myUrl: url})
+   })
+   console.log("HERE HERE HERE")
   }
 
   changeLikes = (like ,op) => {

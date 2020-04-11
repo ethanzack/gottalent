@@ -36,7 +36,8 @@ class HomePage extends React.Component {
   render(){
     return (
         <div>
-          <Navigation style = {{marginBottom: '20px'}}/>
+        <Navigation />
+
           <Container fluid = {true}>
             <p> recent winners </p>
             <p> most popular videos </p>

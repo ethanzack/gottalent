@@ -23,10 +23,10 @@ class ListVideoItem extends Component {
   }
 
   componentDidMount = () => {
-    this.setState({myUrl: this.props.name})
-    // const url = storage.ref('videos').child(this.props.name).getDownloadURL().then((url) => {
-    //   this.setState({myUrl: url})
-    // })
+    // this.setState({myUrl: this.props.name})
+    const url = storage.ref('videos').child(this.props.name).getDownloadURL().then((url) => {
+      this.setState({myUrl: url})
+    })
   }
 
   onClick = (b) => {
