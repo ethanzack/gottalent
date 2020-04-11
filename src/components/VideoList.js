@@ -34,9 +34,9 @@ class VideoList extends Component {
 
   render() {
     const vids = this.state.topFive && this.state.topFive.map((t, ind) => (<ListVideoItem key = {ind} title = "test title" name = {t} />))
-
+    const width = window.innerWidth
     return (
-      <Container fluid = {true} style = {{display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
+      <Container fluid = {true} style = {{display: "flex", flexDirection: "row", justifyContent: "space-around", height: `${9 / 16 * width / 5}px`, width: `${width}px`}}>
         {vids.length == 5 ? vids : null}
       </Container>
     )

@@ -45,10 +45,6 @@ class ListVideoItem extends Component {
     }
   }
 
-  onVideoClick = () => {
-    this.props.history.push("/testingtestingtesting")
-  }
-
   activeHandler = (b) => {
     if(b == "up"){
       if(this.state.like != null){
