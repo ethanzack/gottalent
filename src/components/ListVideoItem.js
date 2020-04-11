@@ -67,9 +67,10 @@ class ListVideoItem extends Component {
   }
 
   render() {
+    const width = window.innerWidth
     return (
       <>{this.state.myUrl && (
-          <Container onClick = {() => this.handleVideoClick()}>
+          <Container onClick = {() => this.handleVideoClick()} style = {{maxHeight: `${9 / 16 * width / 6}px`, maxWidth: `${width / 6}px`}}>
           <Col>
             <Row>
               <Player src= {this.state.myUrl}>
