@@ -46,13 +46,9 @@ class VideoPage extends Component {
     let mounted = true
     if(key == "elem"){
       this.elem = ref
-      console.log("here2 here2 here2")
-
     }
     else {
       this.second = ref
-      console.log("here3 here3 here3")
-
     }
 
   }
@@ -75,7 +71,7 @@ class VideoPage extends Component {
         <Container fluid = {true} style = {{display: "flex", flexDirection: "row", justifyContent: "center"}}>
           <Col xs="6">
             <h5 style = {{display: "flex", justifyContent: "center", alignItems: "center"}}> Watch the video </h5>
-            <VideoItem heightRet = {this.hr} title = {this.props.title} name = "-M46byl80qX3713B_dEH" />
+            <VideoItem heightRet = {this.hr} title = {this.props.title} name = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" />
           </Col>
           <Col xs="6">
             <div  style = {{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center"}}>
@@ -83,7 +79,7 @@ class VideoPage extends Component {
               <h5>Send a Suggestion</h5>
             </div>
             <FormGroup style = {{width: "100%"}}>
-              <Input style = {{height: `365px`, resize: "none"}} type="textarea" name="text" id="suggestion" value = {this.state.comment} onChange = {this.handleChange} />
+              <Input style = {{height: `375px`, resize: "none"}} type="textarea" name="text" id="suggestion" value = {this.state.comment} onChange = {this.handleChange} />
             </FormGroup>
             <Button size = "md" color = "primary" onClick = {() => {this.updateComments()}}>Submit Feedback</Button>
             </div>

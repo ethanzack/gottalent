@@ -23,10 +23,10 @@ class ListVideoItem extends Component {
   }
 
   componentDidMount = () => {
-    // this.setState({myUrl: this.props.name})
-    const url = storage.ref('videos').child(this.props.name).getDownloadURL().then((url) => {
-      this.setState({myUrl: url})
-    })
+    this.setState({myUrl: this.props.name})
+    // const url = storage.ref('videos').child(this.props.name).getDownloadURL().then((url) => {
+    //   this.setState({myUrl: url})
+    // })
   }
 
   onClick = (b) => {
@@ -69,11 +69,10 @@ class ListVideoItem extends Component {
   render() {
     const width = window.innerWidth
     return (
-      <>{this.state.myUrl && (
-          <Container onClick = {() => this.handleVideoClick()} style = {{maxHeight: `${9 / 16 * width / 6}px`, maxWidth: `${width / 6}px`}}>
+        <Container onClick = {() => this.handleVideoClick()}>
           <Col>
             <Row>
-              <Player src= {this.state.myUrl}>
+              <Player src= {this.state.myUrl} preload = "">
                 <ControlBar disableCompletely={true} />
                 <BigPlayButton position="center" />
               </Player>
@@ -83,7 +82,6 @@ class ListVideoItem extends Component {
               </Row>
           </Col>
         </Container>
-    )}</>
     )
   }
 }

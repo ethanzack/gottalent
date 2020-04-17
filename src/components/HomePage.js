@@ -8,6 +8,7 @@ import VideoItem from './VideoItem.js'
 import VideoList from './VideoList.js'
 
 
+
 import Navigation from './Navigation.js'
 
 class HomePage extends React.Component {
@@ -36,7 +37,7 @@ class HomePage extends React.Component {
   render(){
     return (
         <div>
-        <Navigation />
+        <Navigation authenticated = {this.props.authenticated}/>
 
           <Container fluid = {true}>
             <p> recent winners </p>

@@ -95,8 +95,8 @@ class VideoUpload extends Component {
   render() {
     return (
       <div>
-      <Navigation />
-      
+      <Navigation authenticated = {this.props.authenticated}/>
+
       <Container className="themed-container" fluid={true} style = {{marginBottom: '20px'}}>
         <Col sm="12" md={{ size: 6, offset: 3 }} style = {{display: "flex", flexDirection: "column", justifyContent: "center"}}>
 

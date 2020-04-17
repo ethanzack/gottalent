@@ -64,7 +64,7 @@ class MyVideoItem extends Component {
         </Container>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Suggestions</ModalHeader>
           <ModalBody>
             {this.state.comments.map((c, ind) => <Row>{c}</Row>)}
           </ModalBody>
